@@ -1,19 +1,18 @@
 package com.mohan.hackernewsapp.ui.adapter
 
-import android.annotation.SuppressLint
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.mohan.hackernews.data.Story
+import com.mohan.domain.Story
+import com.mohan.hackernewsapp.R
 import kotlinx.android.synthetic.main.top_stories_list.view.*
 
 class StoryAdapter(private val onItemClick: (Story, Int) -> Unit = { track: Story, i: Int -> }) :
     RecyclerView.Adapter<StoryAdapter.StoryViewHolder>() {
 
-    var storyList = arrayListOf<Story>()
+    var storyList = listOf<Story>()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -33,21 +32,21 @@ class StoryAdapter(private val onItemClick: (Story, Int) -> Unit = { track: Stor
         storyList[position].let { track ->
             holder.setData(track)
             holder.itemView.setOnClickListener {
-                Log.e("Mohan", "Position : $position")
                 onItemClick(track, position) }
         }
     }
 
-    fun setData(list: ArrayList<Story>) {
+    fun setData(list: List<Story>) {
         storyList = list
+        notifyDataSetChanged()
     }
 
     class StoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun setData(data: Story) {
             itemView.story_title.text = data.title
             val uri = data.url
-            val url: Array<String> = uri.split("/").toTypedArray()
-            itemView.story_uri.text = url[2]
+//            val url: Array<String> = uri.split("/").toTypedArray()
+            itemView.story_uri.text = uri
 
             val hours = convertSecondsToHours(data.time.toLong())
             val postinfo = " points " + data.score + " by " + data.by + " " + hours + " hours ago "

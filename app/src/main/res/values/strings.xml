@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">HackerNewsApp</string>
+    <string name="seperator_name_points">-</string>
+    <string name="author_by"> - by</string>
+    <string name="story_by">by</string>
+    <string name="story_points">points</string>
+    <string name="via">via</string>
+    <string name="loading">Loading..</string>
+    <string name="no_comments">No Comments</string>
+    <string name="comments_size">Comments</string>
 </resources>
