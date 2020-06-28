@@ -2,11 +2,10 @@ package com.mohan.data.news
 
 import com.mohan.data.ErrorHandler
 import com.mohan.data.repoository.HackerNewsService
-import com.mohan.domain.State
-import com.mohan.domain.news.NewsRepository
 import com.mohan.domain.Comments
+import com.mohan.domain.State
 import com.mohan.domain.Story
-import java.lang.Exception
+import com.mohan.domain.news.NewsRepository
 
 class NewsRepositoryImpl(
     private val hackerNewsService: HackerNewsService,

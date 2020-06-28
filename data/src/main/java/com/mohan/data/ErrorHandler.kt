@@ -3,7 +3,6 @@ package com.mohan.data
 import com.mohan.data.ErrorCode.SocketTimeOut
 import com.squareup.moshi.Moshi
 import retrofit2.HttpException
-import java.lang.Exception
 import java.net.SocketTimeoutException
 
 open class ErrorHandler {

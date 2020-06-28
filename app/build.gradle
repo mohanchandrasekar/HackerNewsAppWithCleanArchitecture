@@ -50,10 +50,6 @@ dependencies {
     implementation "org.koin:koin-android:2.1.6"
     implementation "org.koin:koin-androidx-viewmodel:2.1.6"
 
-//    //Google Map
-//    implementation 'com.google.android.gms:play-services-maps:17.0.0'
-//    implementation 'com.google.android.gms:play-services-location:17.0.0'
-
     implementation project(':domain')
     implementation project(':data')
 
